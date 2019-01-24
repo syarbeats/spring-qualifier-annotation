@@ -14,6 +14,8 @@ import com.learning.spring.spring_qualifier_annotation._interface.Direction;
 @Scope("singleton")
 public class AirborneOperation implements AutoPilot{
 
+	private String airLine;
+	
 	@Autowired
 	@Qualifier("takeOffTarget")
 	private Direction direction;
@@ -35,5 +37,13 @@ public class AirborneOperation implements AutoPilot{
 
 	public String getAreaName() {
 		return direction.getAreaName();
+	}
+
+	public String getAirLine() {
+		return airLine;
+	}
+
+	public void setAirLine(String airLine) {
+		this.airLine = airLine;
 	}
 }
