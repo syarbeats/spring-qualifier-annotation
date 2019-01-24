@@ -21,7 +21,10 @@ public class BeanTest {
 		ApplicationContext context = new ClassPathXmlApplicationContext("spring/app-config.xml");
 		AirborneOperation airAsia = (AirborneOperation) context.getBean("airborneOperation");
 		AirborneOperation klm = (AirborneOperation) context.getBean("airborneOperation");
-		
+	
+		/*
+		 * Bean scope is Singleton, so the object must be refer to the same bean object
+		 * **/
 		Assert.assertEquals(airAsia.getAreaName(), klm.getAreaName());
 		((AbstractApplicationContext) context).close();
 		
